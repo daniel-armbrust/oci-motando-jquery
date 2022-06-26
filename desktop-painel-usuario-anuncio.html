@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">        
+    <link rel="stylesheet" href="css/default.css">
+    <script src="vendor/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript">
+        tinymce.init({
+          selector: '#id_descricao_anuncio',
+          statusbar: false,
+          menubar: false,
+          plugins: 'lists',          
+          toolbar: 'undo redo | bold italic | numlist bullist | alignleft aligncenter alignright alignjustify',
+          lists_indent_on_tab: false
+        });
+    </script>
+    <title>Motando</title>
+  </head>
+  <body>
+    
+    <header id="id_header_navbar">              
+           <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+               <div class="container-fluid">                  
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <a class="navbar-brand offset-md-1 d-md-none d-lg-block" href="#">
+                    <img src="img/home-icon_100x86.png" alt="Motando" width="30" class="img-fluid">
+                  </a> 
+                  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">                    
+                      <li class="nav-item dropdown dropdown-hover">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Comprar
+                        </a>
+                        <ul class="dropdown-menu dropdown-hover-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <li><a class="dropdown-item" href="#">Todos os Anúncios</a></li>
+                          <li><a class="dropdown-item" href="#">Lojas Oficiais</a></li>
+                          <li><a class="dropdown-item" href="#">Busca Avançada</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Vender</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Notícias</a>
+                      </li>
+                    </ul>                    
+                  </div>
+                  <span class="navbar-text">
+                    <a href="#" class="h5 text-decoration-none">
+                        <i class="fas fa-sign-out-alt"></i> Sair
+                    </a>
+                    &nbsp;&nbsp;&nbsp;
+                  </span>
+               </div>
+           </nav>          
+    </header>
+  
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                    <a href="#">
+                      <img src="img/motando_logo-402x150.png" class="img-fluid" alt="Motando" style="width: 300px;">
+                    </a>
+                </div>      
+            </div>   
+        </div>                
+    </section>
+
+    <br>
+
+    <section>
+        <div class="container">           
+               <div class="row">
+                <div class="col-3"></div>
+                   <div class="col-6">
+                       <h1 class="fs-2 text-center text-primary fw-bold"> Detalhes do Anúncio </h1>                       
+                       <p class="p-2 m-2"> Confira os seus dados e insira as informações da moto para deixar seu anúncio mais completo. </p>
+                   </div>
+               </div>
+               <div class="row">
+                   <div class="col-3"></div>
+                   <div class="col-6">                        
+                        <div class="shadow rounded bg-white border p-3">
+                        <form autocomplete="off">
+                            <div class="row pt-2 p-2">
+                                <div class="col">
+                                   <label for="id_marca" class="form-label my-text-purple">Marca <span class="text-danger">*</span></label>
+                                   <select class="form-select my-btn-outline" id="id_marca" style="box-shadow: none;">
+                                        <optgroup label="Principais Marcas" id="todasMacas">
+                                            <option value="" selected="selected" style="display: none;"></option>                                                                                   
+                                            <option value="7">BMW</option>
+                                            <option value="13">Ducati</option>                                            
+                                            <option value="15">Harley-Davidson</option>                                            
+                                            <option value="16">Honda</option>                                            
+                                            <option value="18">Indian</option>                                            
+                                            <option value="20">Kawasaki</option>                                            
+                                            <option value="22">KTM</option>                                            
+                                            <option value="27">Suzuki</option>                                            
+                                            <option value="29">Triumph</option>                                            
+                                            <option value="31">Yamaha</option>                                            
+                                            <option value="68">Dafra</option>
+                                            <option value="112">Royal Enfield</option>                                            
+                                        </optgroup>
+                                        <optgroup label="Todas as Marcas" id="topMarca">                                        
+                                                <option id="marca-1" value="1" style="display: none;">Agrale</option>                                        
+                                                <option id="marca-2" value="2">Alfer</option>                                        
+                                                <option id="marca-3" value="3">Amazonas</option>                                        
+                                                <option id="marca-4" value="4">Aprilia</option>                                        
+                                                <option id="marca-5" value="5">Benelli</option>                                        
+                                                <option id="marca-6" value="6">Bimota</option>                                        
+                                                <option id="marca-7" value="7">BMW</option>                                        
+                                                <option id="marca-8" value="8">Buell</option>                                        
+                                                <option id="marca-9" value="9">By Cristo</option>                                        
+                                                <option id="marca-10" value="10">Cagiva</option>                                        
+                                                <option id="marca-11" value="11">Caloi</option>                                        
+                                                <option id="marca-12" value="12">Daelim</option>                                        
+                                                <option id="marca-13" value="13">Ducati</option>                                        
+                                                <option id="marca-14" value="14">GasGas</option>                                        
+                                                <option id="marca-15" value="15">Harley-Davidson</option>                                        
+                                                <option id="marca-16" value="16">Honda</option>                                        
+                                                <option id="marca-17" value="17">Husqvarna</option>                                        
+                                                <option id="marca-18" value="18">Indian</option>                                        
+                                                <option id="marca-19" value="19">Kasinski</option>                                        
+                                                <option id="marca-20" value="20">Kawasaki</option>                                        
+                                                <option id="marca-21" value="21">Kymco</option>                                        
+                                                <option id="marca-22" value="22">KTM</option>                                        
+                                                <option id="marca-23" value="23">Moto Guzzi</option>                                        
+                                                <option id="marca-24" value="24">MV Agusta</option>                                        
+                                                <option id="marca-25" value="25">MVK</option>                                        
+                                                <option id="marca-26" value="26">Sundown</option>                                        
+                                                <option id="marca-27" value="27">Suzuki</option>                                        
+                                                <option id="marca-28" value="28">Traxx</option>                                        
+                                                <option id="marca-29" value="29">Triumph</option>                                        
+                                                <option id="marca-31" value="31">Yamaha</option>                                        
+                                                <option id="marca-32" value="32">Zhongyu</option>                                        
+                                                <option id="marca-34" value="34">Outras</option>                                        
+                                                <option id="marca-35" value="35">Husky</option>                                        
+                                                <option id="marca-36" value="36">Kahena</option>                                        
+                                                <option id="marca-38" value="38">Peugeot</option>                                        
+                                                <option id="marca-39" value="39">Piaggio</option>                                        
+                                                <option id="marca-40" value="40">Triway</option>                                        
+                                                <option id="marca-41" value="41">Vento</option>                                        
+                                                <option id="marca-42" value="42">Derbi</option>                                        
+                                                <option id="marca-43" value="43">Brandy</option>                                        
+                                                <option id="marca-44" value="44">LEM Motor</option>                                        
+                                                <option id="marca-45" value="45">Garinni</option>                                        
+                                                <option id="marca-47" value="47">Bombardier</option>                                        
+                                                <option id="marca-49" value="49">Renha</option>                                        
+                                                <option id="marca-50" value="50">Polaris</option>                                        
+                                                <option id="marca-51" value="51">Monster</option>                                        
+                                                <option id="marca-52" value="52">Unison</option>                                        
+                                                <option id="marca-53" value="53">Lambretta</option>                                        
+                                                <option id="marca-54" value="54">Mottus</option>                                        
+                                                <option id="marca-55" value="55">Horex</option>                                        
+                                                <option id="marca-56" value="56">Norton</option>                                        
+                                                <option id="marca-57" value="57">Lifan</option>                                        
+                                                <option id="marca-58" value="58">Hot Snake</option>                                        
+                                                <option id="marca-59" value="59">BSA</option>                                        
+                                                <option id="marca-60" value="60">Montesa</option>                                        
+                                                <option id="marca-61" value="61">Wuyang</option>                                        
+                                                <option id="marca-62" value="62">Husaberg</option>                                        
+                                                <option id="marca-63" value="63">Lon-V</option>                                        
+                                                <option id="marca-64" value="64">FYM</option>                                        
+                                                <option id="marca-65" value="65">Ariel</option>                                        
+                                                <option id="marca-66" value="66">Jonny Motorcycles</option>                                        
+                                                <option id="marca-67" value="67">Hao Bao</option>                                        
+                                                <option id="marca-68" value="68">Dafra</option>                                        
+                                                <option id="marca-69" value="69">Green</option>                                        
+                                                <option id="marca-70" value="70">Shineray</option>                                        
+                                                <option id="marca-71" value="71">FOX Scooters</option>                                        
+                                                <option id="marca-72" value="72">Miza</option>                                        
+                                                <option id="marca-73" value="73">Malaguti</option>                                        
+                                                <option id="marca-74" value="74">Gilera</option>                                        
+                                                <option id="marca-75" value="75">Dayun</option>                                        
+                                                <option id="marca-76" value="76">MRX</option>                                        
+                                                <option id="marca-77" value="77">EVTAMERICA</option>                                        
+                                                <option id="marca-89" value="89">Prima</option>                                        
+                                                <option id="marca-90" value="90">Warm</option>                                        
+                                                <option id="marca-91" value="91">Pegassi</option>                                        
+                                                <option id="marca-92" value="92">Mundial</option>                                        
+                                                <option id="marca-93" value="93">Iros</option>                                        
+                                                <option id="marca-95" value="95">Regal Raptor</option>                                        
+                                                <option id="marca-96" value="96">Johnny Pag</option>                                        
+                                                <option id="marca-97" value="97">Sherco</option>                                        
+                                                <option id="marca-98" value="98">TM</option>                                        
+                                                <option id="marca-99" value="99">ML</option>                                        
+                                                <option id="marca-100" value="100">Ducar</option>                                        
+                                                <option id="marca-101" value="101">Bull</option>                                        
+                                                <option id="marca-102" value="102">Buggy&amp;Cia</option>                                        
+                                                <option id="marca-103" value="103">AJP</option>                                        
+                                                <option id="marca-104" value="104">Nipponia</option>                                        
+                                                <option id="marca-105" value="105">Sachs</option>                                        
+                                                <option id="marca-106" value="106">Kzuki</option>                                        
+                                                <option id="marca-107" value="107">Zero Motorcycles</option>                                        
+                                                <option id="marca-108" value="108">Loncin</option>                                        
+                                                <option id="marca-109" value="109">Motocar</option>                                        
+                                                <option id="marca-110" value="110">X Motos</option>                                        
+                                                <option id="marca-111" value="111">Tokens</option>                                        
+                                                <option id="marca-112" value="112">Royal Enfield</option>                                        
+                                                <option id="marca-113" value="113">Sousa Motos</option>                                        
+                                                <option id="marca-114" value="114">Scooters Premium</option>                                        
+                                                <option id="marca-115" value="115">Auguri</option>                                        
+                                                <option id="marca-116" value="116">Dinli</option>                                        
+                                                <option id="marca-117" value="117">Sonik Motor</option>                                        
+                                                <option id="marca-118" value="118">Motorino</option>                                        
+                                                <option id="marca-119" value="119">NSU</option>                                        
+                                                <option id="marca-120" value="120">Pro Tork</option>                                        
+                                                <option id="marca-121" value="121">Alan Motors</option>                                        
+                                                <option id="marca-122" value="122">Mormaii</option>                                        
+                                                <option id="marca-123" value="123">Victory</option>                                        
+                                                <option id="marca-124" value="124">Dayang</option>                                        
+                                                <option id="marca-126" value="126">Beta</option>                                        
+                                                <option id="marca-127" value="127">Evetech</option>                                        
+                                                <option id="marca-129" value="129">Riguete</option>                                        
+                                                <option id="marca-131" value="131">Chimpa TMC</option>                                        
+                                                <option id="marca-132" value="132">Zundapp</option>                                        
+                                                <option id="marca-133" value="133">Ashima</option>                                        
+                                                <option id="marca-134" value="134">Nation</option>                                        
+                                                <option id="marca-137" value="137">Zanella</option>                                        
+                                                <option id="marca-138" value="138">DropBoards</option>                                        
+                                                <option id="marca-139" value="139">MXF Motors</option>                                        
+                                                <option id="marca-140" value="140">RCL Motors</option>                                        
+                                                <option id="marca-141" value="141">Benzhou</option>                                        
+                                                <option id="marca-143" value="143">Jawa</option>                                        
+                                                <option id="marca-144" value="144">MZ</option>                                        
+                                                <option id="marca-145" value="145">Wolver</option>                                        
+                                                <option id="marca-146" value="146">Sunbean</option>                                        
+                                                <option id="marca-147" value="147">Matchless</option>                                        
+                                                <option id="marca-148" value="148">CFMOTO</option>                                        
+                                                <option id="marca-149" value="149">Bikelete</option>                                        
+                                                <option id="marca-150" value="150">Koehler Escoffier</option>                                        
+                                                <option id="marca-151" value="151">Triceron</option>                                        
+                                                <option id="marca-152" value="152">Acellera</option>                                        
+                                                <option id="marca-153" value="153">Vespa</option>                                        
+                                                <option id="marca-154" value="154">Haojue</option>                                        
+                                                <option id="marca-156" value="156">Bee</option>                                        
+                                                <option id="marca-160" value="160">SWM Motorcycles</option>                                        
+                                                <option id="marca-161" value="161">Felza Triciclo</option>                                        
+                                                <option id="marca-162" value="162">Fun Motors</option>                                        
+                                                <option id="marca-163" value="163">Casa do Triciclo</option>                                        
+                                                <option id="marca-164" value="164">Atman</option>                                        
+                                                <option id="marca-165" value="165">Puch</option>                                        
+                                                <option id="marca-166" value="166">Pinelli</option>                                        
+                                                <option id="marca-167" value="167">Vincent</option>                                        
+                                                <option id="marca-168" value="168">Luyuan</option>                                        
+                                                <option id="marca-169" value="169">Voltz</option>                                        
+                                                <option id="marca-170" value="170">Aima</option>                                        
+                                                <option id="marca-171" value="171">So Ver</option>                                        
+                                                <option id="marca-172" value="172">Mobyou</option>                                        
+                                                <option id="marca-173" value="173">Super Soco</option>                                        
+                                                <option id="marca-174" value="174"> Gloov</option>                                        
+                                                <option id="marca-176" value="176">Druida Choppers</option>                                        
+                                        </optgroup>
+                                   </select>                                   
+                                </div>
+                            </div>
+                            <div class="row pt-2 p-2">
+                                <div class="col">
+                                   <label for="id_modelo" class="form-label my-text-purple">Modelo <span class="text-danger">*</span></label>
+                                   <select class="form-select my-btn-outline" id="id_modelo" style="box-shadow: none;">                                    
+                                        <optgroup label="Escolha o modelo">
+                                        <option value="" selected="selected" style="display: none;"></option>
+                                        </optgroup>
+                                    </select>    
+                                </div>
+                            </div>
+                            <div class="row pt-2 p-2">
+                                <div class="col">
+                                    <label for="id_ano" class="form-label my-text-purple">Ano <span class="text-danger">*</span></label>
+                                    <select class="form-select my-btn-outline" id="id_ano" style="box-shadow: none;">                                    
+                                        <optgroup label="Ano">
+                                                <option value="" style="display: none;"></option>                                        
+                                                <option id="ano_2022" value="2022">2022</option>                                        
+                                                <option id="ano_2021" value="2021">2021</option>                                        
+                                                <option id="ano_2020" value="2020">2020</option>                                        
+                                                <option id="ano_2019" value="2019">2019</option>                                        
+                                                <option id="ano_2018" value="2018">2018</option>                                        
+                                                <option id="ano_2017" value="2017">2017</option>                                        
+                                                <option id="ano_2016" value="2016">2016</option>                                        
+                                                <option id="ano_2015" value="2015">2015</option>                                        
+                                                <option id="ano_2014" value="2014">2014</option>                                        
+                                                <option id="ano_2013" value="2013">2013</option>                                        
+                                                <option id="ano_2012" value="2012">2012</option>                                        
+                                                <option id="ano_2011" value="2011">2011</option>                                        
+                                                <option id="ano_2010" value="2010">2010</option>                                        
+                                                <option id="ano_2009" value="2009">2009</option>                                        
+                                                <option id="ano_2008" value="2008">2008</option>                                        
+                                                <option id="ano_2007" value="2007">2007</option>                                        
+                                                <option id="ano_2006" value="2006">2006</option>                                        
+                                                <option id="ano_2005" value="2005">2005</option>                                        
+                                                <option id="ano_2004" value="2004">2004</option>                                        
+                                                <option id="ano_2003" value="2003">2003</option>                                        
+                                                <option id="ano_2002" value="2002">2002</option>                                        
+                                                <option id="ano_2001" value="2001">2001</option>                                        
+                                                <option id="ano_2000" value="2000">2000</option>                                        
+                                                <option id="ano_1999" value="1999">1999</option>                                        
+                                                <option id="ano_1998" value="1998">1998</option>                                        
+                                                <option id="ano_1997" value="1997">1997</option>                                        
+                                                <option id="ano_1996" value="1996">1996</option>                                        
+                                                <option id="ano_1995" value="1995">1995</option>                                        
+                                                <option id="ano_1994" value="1994">1994</option>                                        
+                                                <option id="ano_1993" value="1993">1993</option>                                        
+                                                <option id="ano_1992" value="1992">1992</option>                                        
+                                                <option id="ano_1991" value="1991">1991</option>                                        
+                                                <option id="ano_1990" value="1990">1990</option>                                        
+                                                <option id="ano_1989" value="1989">1989</option>                                        
+                                                <option id="ano_1988" value="1988">1988</option>                                        
+                                                <option id="ano_1987" value="1987">1987</option>                                        
+                                                <option id="ano_1986" value="1986">1986</option>                                        
+                                                <option id="ano_1985" value="1985">1985</option>                                        
+                                                <option id="ano_1984" value="1984">1984</option>                                        
+                                                <option id="ano_1983" value="1983">1983</option>                                        
+                                                <option id="ano_1982" value="1982">1982</option>                                        
+                                                <option id="ano_1981" value="1981">1981</option>                                        
+                                                <option id="ano_1980" value="1980">1980</option>                                        
+                                                <option id="ano_1979" value="1979">1979</option>                                        
+                                                <option id="ano_1978" value="1978">1978</option>                                        
+                                                <option id="ano_1977" value="1977">1977</option>                                        
+                                                <option id="ano_1976" value="1976">1976</option>                                        
+                                                <option id="ano_1975" value="1975">1975</option>                                        
+                                                <option id="ano_1974" value="1974">1974</option>                                        
+                                                <option id="ano_1973" value="1973">1973</option>                                        
+                                                <option id="ano_1972" value="1972">1972</option>                                        
+                                                <option id="ano_1971" value="1971">1971</option>                                        
+                                                <option id="ano_1970" value="1970">1970</option>                                        
+                                                <option id="ano_1969" value="1969">1969</option>                                        
+                                                <option id="ano_1968" value="1968">1968</option>                                        
+                                                <option id="ano_1967" value="1967">1967</option>                                        
+                                                <option id="ano_1966" value="1966">1966</option>                                        
+                                                <option id="ano_1965" value="1965">1965</option>                                        
+                                                <option id="ano_1964" value="1964">1964</option>                                        
+                                                <option id="ano_1963" value="1963">1963</option>                                        
+                                                <option id="ano_1962" value="1962">1962</option>                                        
+                                                <option id="ano_1961" value="1961">1961</option>                                        
+                                                <option id="ano_1960" value="1960">1960</option>                                        
+                                                <option id="ano_1959" value="1959">1959</option>                                        
+                                                <option id="ano_1958" value="1958">1958</option>                                        
+                                                <option id="ano_1957" value="1957">1957</option>                                        
+                                                <option id="ano_1956" value="1956">1956</option>                                        
+                                                <option id="ano_1955" value="1955">1955</option>                                        
+                                                <option id="ano_1954" value="1954">1954</option>                                        
+                                                <option id="ano_1953" value="1953">1953</option>                                        
+                                                <option id="ano_1952" value="1952">1952</option>                                        
+                                                <option id="ano_1951" value="1951">1951</option>                                        
+                                                <option id="ano_1950" value="1950">1950</option>                                        
+                                                <option id="ano_1949" value="1949">1949</option>                                        
+                                                <option id="ano_1948" value="1948">1948</option>                                        
+                                                <option id="ano_1947" value="1947">1947</option>                                        
+                                                <option id="ano_1946" value="1946">1946</option>                                        
+                                                <option id="ano_1945" value="1945">1945</option>                                        
+                                                <option id="ano_1944" value="1944">1944</option>                                        
+                                                <option id="ano_1943" value="1943">1943</option>                                        
+                                                <option id="ano_1942" value="1942">1942</option>                                        
+                                                <option id="ano_1941" value="1941">1941</option>                                        
+                                                <option id="ano_1940" value="1940">1940</option>                                        
+                                                <option id="ano_1939" value="1939">1939</option>                                        
+                                                <option id="ano_1938" value="1938">1938</option>                                        
+                                                <option id="ano_1937" value="1937">1937</option>                                        
+                                                <option id="ano_1936" value="1936">1936</option>                                        
+                                                <option id="ano_1935" value="1935">1935</option>                                        
+                                                <option id="ano_1934" value="1934">1934</option>                                        
+                                                <option id="ano_1933" value="1933">1933</option>                                        
+                                                <option id="ano_1932" value="1932">1932</option>                                        
+                                                <option id="ano_1931" value="1931">1931</option>                                        
+                                                <option id="ano_1930" value="1930">1930</option>                                        
+                                                <option id="ano_1929" value="1929">1929</option>                                        
+                                                <option id="ano_1928" value="1928">1928</option>                                        
+                                                <option id="ano_1927" value="1927">1927</option>                                        
+                                                <option id="ano_1926" value="1926">1926</option>                                        
+                                                <option id="ano_1925" value="1925">1925</option>                                        
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row pt-2 p-2">
+                                <div class="col">
+                                    <label for="id_placa" class="form-label my-text-purple">Placa <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control my-btn-outline" id="id_placa" style="box-shadow: none;">     
+                                </div>
+                            </div>
+                            <div class="row pt-2 p-2">
+                                <div class="col">
+                                    <label for="id_km" class="form-label my-text-purple">KM <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control my-btn-outline" id="id_km" style="box-shadow: none;">     
+                                </div>
+                            </div>
+                            <div class="row pt-2 p-2">
+                                <div class="col">
+                                    <label for="id_cor" class="form-label my-text-purple">Cor <span class="text-danger">*</span></label>
+                                    <select class="form-select my-btn-outline" id="id_cor" style="box-shadow: none;">                      
+                                          <optgroup label="Cor">
+                                               <option value="" style="display: none;"></option>                                            
+                                                <option value="Amarela">Amarela</option>                                            
+                                                <option value="Azul">Azul</option>                                            
+                                                <option value="Bege">Bege</option>                                            
+                                                <option value="Branca">Branca</option>                                            
+                                                <option value="Cinza">Cinza</option>                                            
+                                                <option value="Dourada">Dourada</option>                                            
+                                                <option value="Laranja">Laranja</option>                                            
+                                                <option value="Marrom">Marrom</option>                                            
+                                                <option value="Prata">Prata</option>                                            
+                                                <option value="Preta">Preta</option>                                            
+                                                <option value="Rosa">Rosa</option>                                            
+                                                <option value="Roxa">Roxa</option>                                            
+                                                <option value="Verde">Verde</option>                                            
+                                                <option value="Vermelha">Vermelha</option>                                            
+                                                <option value="Vinho">Vinho</option>                                            
+                                          </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row pt-2 p-2">
+                                <div class="col">
+                                    <label for="id_preco" class="form-label my-text-purple">Preço <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control my-btn-outline" id="id_preco" style="box-shadow: none;">     
+                                </div>
+                            </div>
+                            <div class="row pt-2 p-2">
+                                <div class="col">
+                                    <label for="id_preco" class="form-label my-text-purple">Frase vendedora</label>
+                                    <input type="text" class="form-control my-btn-outline" id="id_preco" style="box-shadow: none;">     
+                                </div>
+                            </div>
+                            <div class="row pt-4 p-2">
+                                <div class="col">
+                                    <label for="id_descricao_anuncio" class="form-label fs-5 text-left text-primary fw-bold ms-2"> Descrição do Anúncio </label>                                    
+                                    <p class="fst-italic ms-2"><span class="text-danger">*</span> Não inserir dados pessoais, e-mail ou telefone neste campo.</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="mb-3">                                        
+                                        <textarea class="form-control" id="id_descricao_anuncio" rows="10" style="box-shadow: none; background-color: white; resize: none;"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row pt-2">
+                                <div class="col">
+                                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                                        <div class="accordion-item">
+                                          <h2 class="accordion-header" id="flush-headingOne">
+                                            <button class="accordion-button collapsed fs-5 text-left text-primary fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                                 Opcionais
+                                            </button>
+                                          </h2>
+                                          <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                              <div class="accordion-body">                                                        
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="id_opcionais_alarme">
+                                                        <label class="form-check-label" for="id_opcionais_alarme">
+                                                             Alarme 
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="id_opcionais_bau">
+                                                        <label class="form-check-label" for="id_opcionais_bau">
+                                                              Baú / Malas 
+                                                        </label>
+                                                            </div>                                                        
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="id_opcionais_cmpbordo">
+                                                        <label class="form-check-label" for="id_opcionais_cmpbordo">
+                                                            Computador de Bordo 
+                                                        </label>
+                                                    </div>      
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="id_opcionais_gps">
+                                                        <label class="form-check-label" for="id_opcionais_gps">
+                                                            GPS 
+                                                        </label>
+                                                    </div>                                                    
+                                              </div>
+                                          </div>
+                                        </div>                                       
+                                    </div>                                                       
+                                </div>
+                            </div>
+                            <div class="row pt-2">
+                                <div class="col">
+                                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="flush-headingTwo">
+                                                <button class="accordion-button collapsed fs-5 text-left text-primary fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                                    Outros Detalhes
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExampleTwo">
+                                                <div class="accordion-body">                                                        
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="id_outros_contraoferta">
+                                                            <label class="form-check-label" for="id_outros_contraoferta">
+                                                                Aceita contra oferta
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="id_outros_actroca">
+                                                            <label class="form-check-label" for="id_outros_actroca">
+                                                                Aceita troca
+                                                            </label>
+                                                        </div>                                                        
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="id_outros_docemdia">
+                                                            <label class="form-check-label" for="id_outros_docemdia">
+                                                                Documentação em dia
+                                                            </label>
+                                                        </div>   
+                                                        <br>   <br>   
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="id_outros_sinistro">
+                                                            <label class="form-check-label" for="id_outros_sinistro">
+                                                                Sinistro 
+                                                            </label>
+                                                        </div>  
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="id_opcionais_trilhapista">
+                                                            <label class="form-check-label" for="id_opcionais_trilhapista">
+                                                                Moto preparada para trilha ou pista 
+                                                            </label>
+                                                        </div>   
+                                                        <hr>
+                                                        <br>
+                                                        <label for="id_freios" class="form-label my-text-purple">Freios</label>
+                                                        <select class="form-select my-btn-outline" id="id_freios" style="box-shadow: none;">
+                                                            <option selected></option>
+                                                            <option value="1">Disco</option>
+                                                            <option value="2">Combinado</option>
+                                                            <option value="3">ABS</option>                                                        
+                                                        </select>
+                                                        <br><br>
+                                                        <label for="id_tipo_partida" class="form-label my-text-purple">Tipo de partida</label>
+                                                        <select class="form-select my-btn-outline" id="id_tipo_partida" style="box-shadow: none;">
+                                                            <option selected></option>
+                                                            <option value="1">Pedal</option>
+                                                            <option value="2">Elétrica</option>
+                                                            <option value="3">Ambos</option>                                                        
+                                                        </select>
+                                                        <br><br>
+                                                        <label for="id_refrmotor" class="form-label my-text-purple">Refrigeração do motor</label>
+                                                        <select class="form-select my-btn-outline" id="id_refrmotor" style="box-shadow: none;">
+                                                            <option selected></option>
+                                                            <option value="1">Líquida</option>
+                                                            <option value="2">Ar</option>                                                        
+                                                        </select>
+                                                        <br><br>
+                                                        <label for="id_estilo" class="form-label my-text-purple">Estilo</label>
+                                                        <select class="form-select my-btn-outline" id="id_estilo" style="box-shadow: none;">
+                                                                    <optgroup label="Estilo">
+                                                                    <option value="" style="display: none;"></option>                                                            
+                                                                    <option id="CUB" value="CUB">Cub</option>                                                            
+                                                                    <option id="CAFE_RACER" value="CAFE_RACER">Café Racer</option>                                                            
+                                                                    <option id="CICLOMOTOR" value="CICLOMOTOR">Ciclomotor</option>                                                            
+                                                                    <option id="CLASSICA" value="CLASSICA">Clássica</option>                                                            
+                                                                    <option id="CUSTOM" value="CUSTOM">Custom</option>                                                            
+                                                                    <option id="BIG_TRAIL" value="BIG_TRAIL">Big Trail</option>                                                            
+                                                                    <option id="ELETRICA" value="ELETRICA">Elétrica</option>                                                            
+                                                                    <option id="MINIMOTO" value="MINIMOTO">Minimoto</option>                                                            
+                                                                    <option id="NAKED" value="NAKED">Naked</option>                                                            
+                                                                    <option id="OFF_ROAD" value="OFF_ROAD">Off-Road</option>                                                            
+                                                                    <option id="SCOOTER" value="SCOOTER">Scooter</option>                                                            
+                                                                    <option id="SCRAMBLER" value="SCRAMBLER">Scrambler</option>                                                            
+                                                                    <option id="SPORT" value="SPORT">Sport</option>                                                            
+                                                                    <option id="STREET" value="STREET">Street</option>                                                            
+                                                                    <option id="SUPERMOTARD" value="SUPERMOTARD">SuperMotard</option>                                                            
+                                                                    <option id="TRAIL" value="TRAIL">Trail</option>                                                            
+                                                                    <option id="TRICICLO" value="TRICICLO">Triciclo</option>                                                            
+                                                                    <option id="TOURING" value="TOURING">Touring</option>                                                            
+                                                                    <option id="QUADRICICLO" value="QUADRICICLO">Quadriciclo</option>                                                            
+                                                                    </optgroup>                                                       
+                                                        </select>
+                                                        <br><br>
+                                                        <label for="id_origem" class="form-label my-text-purple">Origem</label>
+                                                        <select class="form-select my-btn-outline" id="id_origem" style="box-shadow: none;">
+                                                            <option selected></option>
+                                                            <option value="1">Nacional</option>
+                                                            <option value="2">Importada</option>                                                        
+                                                        </select>
+
+                                                </div>
+                                            </div>
+                                        </div>                                       
+                                    </div>                                                       
+                                </div>
+                            </div>                            
+                            <div class="row pt-4">
+                                <div class="col">
+                                    <div class="d-grid gap-2">
+                                       <button type="button" class="btn btn-success fw-bold p-3 fs-5">Concluír Anúncio</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                        </form>  
+                        </div>
+                   </div>
+                   <div class="col-3"></div>
+               </div>              
+        </div>
+    </section>
+
+    <br>
+    <br>
+
+    <footer>
+        <div class="container-fluid" id="id_footer_motando_anuncio_container">        
+            <div class="row pt-4">
+                <div class="col-12 text-center">
+                    <h3 class="h1"><strong>Quer Vender Sua moto?</strong></h3>
+                    <h3 class="h3 pt-2"><strong>Anuncie grátis agora mesmo!</strong></h3>      
+                </div>
+            </div>          
+            <div class="row pt-4">
+                <div class="col-12 d-flex justify-content-center">
+                    <a class="btn btn-success btn-lg fw-bold" id="id_link_motando_anuncio" href="#">
+                        &nbsp;&nbsp;&nbsp; Anunciar &nbsp;&nbsp;&nbsp;
+                    </a>
+                </div>
+            </div>       
+            <br>
+        </div>        
+        <div class="container-fluid" id="id_footer_newsletter_container">        
+            <form>                
+                    <div class="row p-4">
+                        <div class="col text-right">
+                            <p class="pt-2 h5"> Receba nossas notícias </p>
+                        </div>            
+                        <div class="col-4">
+                            <input type="text" class="form-control" placeholder="Nome">
+                        </div>
+                        <div class="col-4">
+                            <input type="email" class="form-control" placeholder="E-mail">
+                        </div>
+                        <div class="col">
+                            <button type="submit" class="btn btn-success btn-block fw-bold"> &nbsp;&nbsp;&nbsp; Enviar &nbsp;&nbsp;&nbsp; </button>
+                        </div>            
+                    </div>
+            </form>
+        </div>
+        <div class="container-fluid" id="id_footer_container"> 
+            <div class="row p-4">
+                <div class="col-12 d-flex justify-content-center">
+                    <p class="pt-2">
+                        © Copyright - 2020 | MOTANDO.com.br | Todos os direitos reservados | All Rights reserved | 
+                        <a href="#">Termos de uso</a>
+                    </p>
+                </div>
+            </div>       
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+</body>
+</html>
