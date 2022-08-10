@@ -53,7 +53,7 @@ function getMotoModelo(marcaId) {
 
       $.ajax({
 
-        url: `https://api.ocibook.com.br/motando/20220304/moto/marca/modelo?marca-id=${marcaId}`,
+        url: `https://api.ocibook.com.br/motando/20220304/moto/marca/${marcaId}/modelo`,
         type: 'GET', 
         dataType: 'json',    
 
@@ -100,7 +100,7 @@ function getMotoModeloVersao(marcaId, modeloId) {
 
     $.ajax({
 
-        url: `https://api.ocibook.com.br/motando/20220304/moto/marca/modelo/versao?marca-id=${marcaId}&modelo-id=${modeloId}`,
+        url: `https://api.ocibook.com.br/motando/20220304/moto/marca/${marcaId}/modelo/${modeloId}/versao`,
         type: 'GET', 
         dataType: 'json',    
 
@@ -194,7 +194,7 @@ function getBrasilCidade(estadoId) {
 
     $.ajax({
 
-      url: `https://api.ocibook.com.br/motando/20220304/brasil/estado/cidade?estado-id=${estadoId}`,
+      url: `https://api.ocibook.com.br/motando/20220304/brasil/estado/${estadoId}/cidade`,
       type: 'GET', 
       dataType: 'json',    
 
