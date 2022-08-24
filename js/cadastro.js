@@ -77,10 +77,10 @@ function submitCadastroParticular() {
             success: function(jsonResp) {
     
                 if (jsonResp.status === 'success') {
-                    alert('DEU CERTO!');
+                    $(location).attr('href', 'https://motando.ocibook.com.br/email-confirmacao.html');
                 }
                 else {                  
-                    alert('DEU PAU!');  
+                    alert('DEU ERRO!');  
                 }            
             },
             error: function(xhr, textStatus, errorThrown) {                    
